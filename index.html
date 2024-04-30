@@ -1,114 +1,104 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.</title>
-    <link rel="icon" href="" sizes="32x32">
-	
+    <title>vSRO-ServerAddon</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #454444;
-            
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-
-        section {
-            flex: 1;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 20px;
-            max-width: 800px;
-            margin: auto;
-            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/696/278/small/textured-black-background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        h1 {
+            background-color: #f8f9fa;
             color: #333;
         }
 
-        p {
-            line-height: 1.6;
-            color: #666;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        footer {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #007bff;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            font-size: 14px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .support {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
             text-align: center;
-            padding: 1em;
-            background-color: #333;
-            color: #fff;
+        }
+
+        .coffee {
+            width: 18px;
+            height: 18px;
+            margin-bottom: -3px;
         }
     </style>
 </head>
+
 <body>
+    <div class="container">
+        <h1>vSRO-ServerAddon</h1>
+        <p>Customize Silkroad Online server files (v1.188) behavior through DLL injection.</p>
 
-    <header>
-        <h1 style="color: #EA587F;">Göz Kuruluğu</h1>
-    </header>
+        <h2>Features</h2>
+        <ul>
+            <li>Easy to inject using <em>Stud_PE</em></li>
+            <li>Patch values from memory directly</li>
+            <li>Define all options from their respective config file</li>
+            <li>Execute actions from Gameserver (to support N modules, N tables will be created)</li>
+        </ul>
 
-    <section>
-        <h1 style="color: red";>Göz kuruluğuna iyi gelen gıdalar!</h1>
-    <p style="color: white";>Su içmek: Gözyaşının büyük bölümünü oluşturan su vücudumuzun en önemli yapı taşıdır, az su içildiğinde gözyaşı yapımı da kötü etkilenir. Bu nedenle günde en az 2 litre su içmenin gözyaşı yapımına faydası olacağını unutmamalıyız.</p>
+        <h2>How to use?</h2>
+        <ol>
+            <li>Make a backup from your <code>SR_GameServer.exe</code> and <code>SR_ShardManager.exe</code> just in case something goes wrong</li>
+            <li>Download, install, and execute <a href="http://www.cgsoftlabs.ro/zip/Stud_PE.zip">Stud_PE</a></li>
+            <li>Extract <code>vSRO-ServerAddon.bin.zip</code> to the folder where your server files are located</li>
+            <li>Drag & drop <code>SR_GameServer.exe</code> into Stud_PE</li>
+            <!-- Steps 5 to 8 -->
+        </ol>
 
-    <p style="color: white";>Balık ve deniz ürünleri: İçerdikleri omega-3 yağ asitleri sayesinde yağlı balık tüketmek göz yaşının yağ tabakanın yapımını artırmakta, kirpik dibi bezlerinin yağ salgısı kalitesini artırmakta ve yağ bezlerinin iltihaplanmasını önlemektedir. Özellikle kuzey denizi somonu, sardalya, omega 3 içeriği yüksek balıklardır.</p>
+        <!-- Insert the rest of the content here -->
 
-    <p style="color: white";>Yeşil yapraklı sebzeler: İçerdikleri C vitamini ile antioksidan etki gösterirken, folik asit sayesinde de gözlerimize fayda sağlarla, göz kuruluğu belirtilerini azaltırlar.</p>
-
-    <p style="color: white";>Kuruyemişler: Özellikle fındık, yer fıstığı, kaju, ceviz de sağladıkları vitamin, mineral ve omega-3 sayesinde göz yaşı için faydalıdırlar. Kabak çekirdeği de yüksek omega-3 içerir.</p>
-
-    <p style="color: white";>Tohumlar: İçerdikleri omega-3 sayesinde keten tohumu ve chia tohumu gözyaşı kalitesini artırırlar.</p>
-
-    <p style="color: white";>Baklagiller: Yüksek protein içerikleri, mineraller ve vitaminler sayesinde diyetimizden eksik olamaması gereken besinlerdir. Gözyaşı kalitesine iyi gelirler.</p>
-
-    <p style="color: yellow";>Zeytin yağı: Hem besin olarak tüketildiğinde, hem de göz kapaklarına masajla uygulandığında göz kuruluğu belirtilerini rahatlatan Akdeniz’in mucizesi zeytinyağını da diyetimizde hiç unutmamalıyız.</p>
-
-    <p style="color: white";>Meyveler: Özellikle mandalina, limon, portakal gibi C vitamini içeriği yüksek meyvelerin tüketimi önerilmektedir.</p>
-    </section>
-
-
-<form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
-
-	
-    <footer>
-        <p>© 2024 Bilal</p>
-    </footer>
-
+        <div class="support">
+            <p><strong>Do you feel this project is helping you a lot?</strong></p>
+            <p>Support me! <a href="https://www.buymeacoffee.com/JellyBitz">Buy me a coffee <img class="coffee" src="https://twemoji.maxcdn.com/2/72x72/2615.png" alt="Coffee"></a></p>
+            <p>Created with <img src="https://twemoji.maxcdn.com/2/72x72/1f499.png" alt="Yes, Code!" width="18" height="18"></p>
+        </div>
+    </div>
 </body>
+
 </html>
