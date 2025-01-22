@@ -1,0 +1,539 @@
+
+<style>
+    /* Tüm sayfayı koyu tema yapma */
+    body {
+        background-color: #121212; /* Koyu arka plan */
+        color: #ffffff; /* Beyaz yazı rengi */
+        font-family: Arial, sans-serif;
+    }
+
+    a {
+        color: #bb86fc; /* Koyu temaya uygun link rengi */
+    }
+
+    /* Diğer öğeler için daha fazla stil eklenebilir */
+    header, footer {
+        background-color: #333333; /* Koyu başlık ve alt bilgi alanları */
+        padding: 10px;
+        text-align: center;
+    }
+
+    .content {
+        padding: 20px;
+    }
+</style>
+
+<div id="post_message_2582523" itemprop="articleBody" bis_skin_checked="1">
+			Hey guys <img width="16" height="16" src="images/smilies/wink.gif" border="0" alt="" title="Wink" class="inlineimg"><br>
+After I got some requests for "How to pk2-Edit", I've written a detailed Tutorial how to do pk2 editing.<br>
+Well as you can see that this tutorials are for newbie and advanced editors.<br>
+<br>
+Feel free to copy things of my tutorial but do not forget to give credits.<br>
+Writing this tutorial took me lots of time.<br>
+Respect this hard work as I respect yours.<br>
+<br>
+<br>
+Now the Tutorials <img width="16" height="16" src="images/smilies/smile.gif" border="0" alt="" title="Smile" class="inlineimg"><br>
+<br>
+First of all you need to extract the Media.pk2 with Drew's Pk2 Extractor<br>
+Tools are in the following post <img width="16" height="16" src="images/smilies/smile.gif" border="0" alt="" title="Smile" class="inlineimg"><br>
+<br>
+<br>
+__________________________________________________  ______________________________<br>
+<br>
+<font size="3"><b><font color="royalblue">Register:</font></b></font><br>
+<b><font color="teal">1.</font> Itemdata Editing<br>
+<font color="teal">2.</font> SoX Editing<br>
+<font color="teal">3.</font> Glow Editing<br>
+<font color="teal">4.</font> Character Editing<br>
+<font color="teal">5.</font> Removing Itemall and Event Windows<br>
+<font color="teal">6.</font> Skill Editing<br>
+<font color="teal">∞.</font> Importing the Files to the .pk2</b><br>
+__________________________________________________  ______________________________<br>
+<br>
+<br>
+<br>
+<font size="5"><b><font color="Lime">1. Itemdata Editing</font></b></font><br>
+<br>
+Open Itemdata.txt<br>
+/Media/server_dep/silkroad/textdata/itemdata.txt<br>
+<br>
+<div style="margin:20px; margin-top:5px" bis_skin_checked="1">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Code:</div>
+	<pre class="alt2 prettyprint" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 498px;
+		text-align: left;
+		overflow: auto"><span class="pln">WEAPON CODES</span><span class="pun">:</span><span class="pln">
+BLADE</span><span class="pun">=</span><span class="pln">CH_BLADE_XX
+GLAVIE</span><span class="pun">=</span><span class="pln">CH_TBLADE_XX
+BOW</span><span class="pun">=</span><span class="pln">CH_BOW_XX
+SPEAR</span><span class="pun">=</span><span class="pln">CH_SPEAR_XX
+SHIELD</span><span class="pun">=</span><span class="pln">CH_SHIELD_XX
+SWORD</span><span class="pun">=</span><span class="pln">CH_SWORD_XX
+DAGGER</span><span class="pun">=</span><span class="pln">EU_DAGGER_XX
+CLERIC ROD</span><span class="pun">=</span><span class="pln">EU_STAFF_XX
+STAFF</span><span class="pun">=</span><span class="pln">EU_TSTAFF_XX
+HARP</span><span class="pun">=</span><span class="pln">EU_HARP_XX
+WARLOCK ROD</span><span class="pun">=</span><span class="pln">EU_DARKSTAFF_XX
+CROSSBOW</span><span class="pun">=</span><span class="pln">EU_CROSSBOW_XX
+AXE</span><span class="pun">=</span><span class="pln">EU_AXE_XX
+TWO HANDED SWORD</span><span class="pun">=</span><span class="pln">EU_TSWORD_XX
+ONE HANDED SWORD</span><span class="pun">=</span><span class="pln">EU_SWORD_XX
+SHIELD</span><span class="pun">=</span><span class="pln">EU_SHIELD_XX
+
+CLOTHES</span><span class="pun">:</span><span class="pln">
+GARMENT</span><span class="pun">=</span><span class="pln">CH_Y_CLOTHES_XX
+PROTECTOR</span><span class="pun">=</span><span class="pln">CH_Y_LIGHT_XX
+ARMOR</span><span class="pun">=</span><span class="pln">CH_Y_HEAVY_XX
+
+ROBE</span><span class="pun">=</span><span class="pln">EU_Y_CLOTHES_XX
+LIGHT ARMOR</span><span class="pun">=</span><span class="pln">EU_Y_LIGHT_XX
+HEAVY ARMOR</span><span class="pun">=</span><span class="pln">EU_Y_HEAVY_XX
+
+
+XX </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Degree</span><span class="pln"> </span><span class="pun">(</span><span class="lit">01</span><span class="pun">,</span><span class="lit">02</span><span class="pun">,</span><span class="lit">03.</span><span class="pun">...</span><span class="lit">08</span><span class="pun">,</span><span class="lit">09</span><span class="pun">,</span><span class="lit">10</span><span class="pun">)</span><span class="pln">
+Y </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Gender</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Male</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> M </span><span class="pun">;</span><span class="pln"> </span><span class="typ">Female</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> W</span><span class="pun">)</span></pre>
+</div>Expample:<br>
+changing Blade 8th (2.tier) to 9th (3.tier) to 10th<br>
+Search for CH_BLADE_08<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img367.imageshack.us/img367/4140/13986697qi2.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+in the middle you will find bsr and ddj codes<br>
+bsr is that what you can see ingame<br>
+the degree changes<br>
+and ddj is the icon of the weapon<br>
+<br>
+now change the degrees<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img371.imageshack.us/img371/4066/59851495ic5.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+<br>
+<br>
+<br>
+You also can change clothes and job suits<br>
+<br>
+for job suits you need to know that codes:<br>
+<br>
+<div style="margin:20px; margin-top:5px" bis_skin_checked="1">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Code:</div>
+	<pre class="alt2 prettyprint" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 242px;
+		text-align: left;
+		overflow: auto"><span class="pun">-</span><span class="pln"> </span><span class="typ">White</span><span class="pln"> </span><span class="typ">Flag</span><span class="pun">:</span><span class="pln"> ITEM_CH_M_TRADE_TRADER_02 </span><span class="pun">;</span><span class="pln"> ITEM_CH_W_TRADE_TRADER_02
+</span><span class="pun">-</span><span class="pln"> </span><span class="typ">Red</span><span class="pln"> </span><span class="typ">Flag</span><span class="pun">:</span><span class="pln"> ITEM_CH_M_TRADE_TRADER_03 </span><span class="pun">;</span><span class="pln"> ITEM_CH_W_TRADE_TRADER_03
+
+</span><span class="pun">-</span><span class="pln"> </span><span class="typ">Identity</span><span class="pln"> </span><span class="typ">Card</span><span class="pun">:</span><span class="pln"> ITEM_CH_M_TRADE_HUNTER_02 </span><span class="pun">;</span><span class="pln"> ITEM_CH_W_TRADE_HUNTER_02
+</span><span class="pun">-</span><span class="pln"> </span><span class="typ">Special</span><span class="pln"> </span><span class="typ">Identity</span><span class="pln"> </span><span class="typ">Card</span><span class="pun">:</span><span class="pln"> ITEM_CH_M_TRADE_HUNTER_03 </span><span class="pun">;</span><span class="pln"> ITEM_CH_W_TRADE_HUNTER_03
+
+</span><span class="pun">-</span><span class="pln"> </span><span class="typ">Black</span><span class="pln"> </span><span class="typ">Suit</span><span class="pun">:</span><span class="pln"> ITEM_CH_M_TRADE_THIEF_02 </span><span class="pun">;</span><span class="pln"> ITEM_CH_W_TRADE_THIEF_02
+</span><span class="pun">-</span><span class="pln"> </span><span class="typ">Devil</span><span class="pln"> </span><span class="typ">Suit</span><span class="pun">:</span><span class="pln"> ITEM_CH_M_TRADE_THIEF_03 </span><span class="pun">;</span><span class="pln"> ITEM_CH_W_TRADE_THIEF_03
+
+
+
+KOREAN SPECIAL SUITS</span><span class="pun">:</span><span class="pln">
+JUST INSTERT THE NUMBER </span><span class="lit">4</span><span class="pln"> INSTEAD OF </span><span class="lit">2</span><span class="pln"> OR </span><span class="lit">3</span><span class="pln">
+ITEM_CH_W_TRADE_THIEF_04</span></pre>
+</div><br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img72.imageshack.us/img72/570/84651571pc5.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+<br>
+<br>
+<font size="5"><font color="lime"><b>2. SoX Editing</b></font></font><br>
+<br>
+open itemrare.txt<br>
+/Media/resinfo/silkroad/itemrare.txt<br>
+<br>
+first you need this codes <img width="16" height="16" src="images/smilies/wink.gif" border="0" alt="" title="Wink" class="inlineimg"><br>
+<div style="margin:20px; margin-top:5px" bis_skin_checked="1">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Code:</div>
+	<pre class="alt2 prettyprint" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 210px;
+		text-align: left;
+		overflow: auto"><span class="typ">Normal</span><span class="pln"> weapon</span><span class="pun">:</span><span class="pln">
+A</span><span class="pun">=</span><span class="lit">1Tier</span><span class="pln">
+B</span><span class="pun">=</span><span class="lit">2Tier</span><span class="pln">
+C</span><span class="pun">=</span><span class="lit">3Tier</span><span class="pln">
+</span><span class="typ">SoX</span><span class="pun">:</span><span class="pln">
+A_RARE</span><span class="pun">=</span><span class="typ">SoS</span><span class="pln">
+B_RARE</span><span class="pun">=</span><span class="typ">SoM</span><span class="pln">
+C_RARE</span><span class="pun">=</span><span class="typ">SoSun</span><span class="pln">
+</span><span class="typ">Honor</span><span class="pun">:</span><span class="pln">
+A_RARE_HONOR</span><span class="pun">=</span><span class="typ">Seal</span><span class="pln"> </span><span class="typ">Of</span><span class="pln"> </span><span class="typ">Honor</span><span class="pln"> </span><span class="typ">Star</span><span class="pln">
+B_RARE_HONOR</span><span class="pun">=</span><span class="typ">Seal</span><span class="pln"> </span><span class="typ">Of</span><span class="pln"> </span><span class="typ">Honor</span><span class="pln"> </span><span class="typ">Moon</span><span class="pln">
+C_RARE_HONOR</span><span class="pun">=</span><span class="typ">Seal</span><span class="pln"> </span><span class="typ">Of</span><span class="pln"> </span><span class="typ">Honor</span><span class="pln"> </span><span class="typ">Sun</span></pre>
+</div>[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img371.imageshack.us/img371/8684/28875724ws1.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+these are the codes for honor<br>
+if you delete the _HONOR of the code _C_RARE_HONOR you will change Seal of  Sun to Seal of Honor Sun<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img367.imageshack.us/img367/2270/73890573am9.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+if you put _HONOR to the code _C_RARE you will change Seal of Honor Sun to Seal of Sun<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img367.imageshack.us/img367/4022/56332466kq1.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+you can change normal weapons to sox or soh too<br>
+you need to delete _RARE_HONOR to get soh<br>
+and _RARE to get sox<br>
+<br>
+if your edited weapon is a normal weapon you also need to edit the itemdata.txt<br>
+<br>
+open your itemdata.txt<br>
+<br>
+look for your item<br>
+my item is the BLADE_08_C<br>
+in that line you will see the number "180000"<br>
+there are 2 zero's after that number<br>
+just change the second "0" to "2"<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img141.imageshack.us/img141/1941/14hj4.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+result:<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img72.imageshack.us/img72/2158/15kj7.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+that step is important because this will show your weapon as SoX ingame<br>
+but the bad thing is that your weapon is show as sox in your inventory too and the name of the weapon is yellow.<br>
+but i think that isnt a problem<br>
+<br>
+WARNING: <br>
+If you want to change sox of blade , there are 2 codes<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img390.imageshack.us/img390/8452/51860202ii9.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+you need to change both to get the full sox glow<br>
+otherwise you will see the half glow or just the sun<br>
+its just for sos and sosun<br>
+<br>
+<font size="5"><font color="lime"><b>3. Glow Editing:</b></font></font><br>
+<br>
+open itemtypenumber.txt<br>
+it is in the same folder as itemrare.txt<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img371.imageshack.us/img371/2016/10fh3.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+standard glows<br>
+<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img72.imageshack.us/img72/3839/11jr9.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+changed to +9<br>
+<br>
+i think the picture tells how to change the glows <img width="16" height="16" src="images/smilies/wink.gif" border="0" alt="" title="Wink" class="inlineimg"><br>
+<br>
+<font color="Red"><b>Notice:</b></font> Copy only the color codes, not the whole line!!!<br>
+<br>
+<br>
+<font color="Red">XXXX</font> <font color="Lime">XXXX</font> <font color="DeepSkyBlue">XXXX</font><br>
+<font color="Red">Red</font>   <font color="Lime">Green</font> <font color="DeepSkyBlue">Blue</font><br>
+<br>
+<br>
+<br>
+<font size="5"><font color="lime"><b>4. Character Editing</b></font></font><br>
+<br>
+open characterdata.txt<br>
+its in the same folder as the itemdata.txt<br>
+<br>
+now i will edit Wolf into a Genie<br>
+<br>
+first you need to search for the wolf_02<br>
+if you have done just look for the lvl of your pet you want to change<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img364.imageshack.us/img364/6567/12eh6.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+now paste wolf_02 over with jinn_02 (the code for the genie)<br>
+ddj is the icon of the pet<br>
+<br>
+you also can change the growth of the pet<br>
+on lvl 80 your pet has got the growth 120<br>
+dunno what unit it is but its the growth xD<br>
+if you change the 120 to 180 your pet will be bigger <img width="16" height="16" src="images/smilies/wink.gif" border="0" alt="" title="Wink" class="inlineimg"><br>
+<br>
+<br>
+<font size="5"><font color="lime"><b>5. Removing Itemall and Event Windows</b></font></font><br>
+<br>
+Itemmall Window:<br>
+<br>
+open mall_notify.txt<br>
+/Media/server_dep/silkroad/event/mall_notify.txt<br>
+<br>
+<div style="margin:20px; margin-top:5px" bis_skin_checked="1">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Code:</div>
+	<pre class="alt2 prettyprint" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 34px;
+		text-align: left;
+		overflow: auto"><span class="typ">Open</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"1"</span></pre>
+</div>change to<br>
+<br>
+<div style="margin:20px; margin-top:5px" bis_skin_checked="1">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Code:</div>
+	<pre class="alt2 prettyprint" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 34px;
+		text-align: left;
+		overflow: auto"><span class="typ">Open</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"0"</span></pre>
+</div><br>
+Event Window:<br>
+open event_interface.txt<br>
+/Media/server_dep/silkroad/event/event_interface.txt<br>
+<br>
+<div style="margin:20px; margin-top:5px" bis_skin_checked="1">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Code:</div>
+	<pre class="alt2 prettyprint" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 34px;
+		text-align: left;
+		overflow: auto"><span class="typ">Open</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"1"</span></pre>
+</div>change to<br>
+<br>
+<div style="margin:20px; margin-top:5px" bis_skin_checked="1">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Code:</div>
+	<pre class="alt2 prettyprint" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 34px;
+		text-align: left;
+		overflow: auto"><span class="typ">Open</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"0"</span></pre>
+</div><br>
+<font size="5"><font color="lime"><b>6. Skill Editing</b></font></font><br>
+<br>
+Well, I've seen a lot of wrong tutorials on some forums like SRF etc.<br>
+I've decided to make my own tut which will work for 100% <img width="16" height="16" src="images/smilies/wink.gif" border="0" alt="" title="Wink" class="inlineimg"><br>
+<br>
+now, first of all you will need the skilleffect.txt (there are 2 skilleffect.txt)<br>
+you will need both files<br>
+<br>
+<br>
+open skilleffect.txt<br>
+1. -  /Media/server_dep/silkroad/textdata/skilleffect.txt<br>
+2. -  /Media/resinfo/skilleffect.txt<br>
+<br>
+after you've opened you will see after exploring the files that there are two parts<br>
+first part there are the FALSE which means while doing the skill there will be effects like the blue effect of anti devil bow or the yellow effect of strong bow<br>
+second part there are the SHOT or ACT which means that there is an action while doing the skill like hawk summon or Soul spear soul<br>
+<br>
+at first i will show you how to edit the lightning hawk (Lv 76) to fire hawk (Lv 100+) (bow skill)<br>
+search for the string:<br>
+SKILL_CH_BOW_CALL_D<br>
+you will see that there is the false line<br>
+search again after you see the ACT line<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img59.imageshack.us/img59/7276/tut1du6.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+<br>
+then scroll to the side and you will see the skill name:<br>
+res\npc\animal\	lighthawk.bsr<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img381.imageshack.us/img381/919/tut2ne0.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+change it to:<br>
+res\npc\animal\	firehawk.bsr <br>
+which stands at the last line of the skill tree SKILL_CH_BOW_CALL<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img257.imageshack.us/img257/6433/tut3pt2.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+<br>
+<font color="red"><b>*NOTICE:</b><br>
+You need to edit both skilleffect.txt files to get the new skills as a result!</font><br>
+<br>
+<br>
+Now i will edit the Anti Devil Bow - Strike (Lv 71) to Anti Devil Bow Dunno xD (Lv 100+)<br>
+<br>
+coz its only an effect while doing the skill (Blue ray of Anti Devil Bow) we only need the 1. part of the skilleffect.txt file<br>
+<br>
+Search for SKILL_CH_BOW_CRITICAL_D<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img257.imageshack.us/img257/3165/tut4xg9.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+Scroll to the side after you see that string: <br>
+skill\china\force_bow_critical_b.efp<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img106.imageshack.us/img106/9475/tut5cv6.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+edit the "b" to "c"<br>
+<br>
+result:<br>
+skill\china\force_bow_critical_c.efp<br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?https://img381.imageshack.us/img381/3138/tut6lf1.jpg" target="_blank" bis_skin_checked="1">screenshot</a>]<br>
+<br>
+<br>
+<font color="red"><b>*NOTICE:</b><br>
+You need to edit both skilleffect.txt files to get the new skills as a result!</font><br>
+<br>
+<br>
+After editing both Files you can import the files manually*<br>
+<br>
+*If you have got 2 files with the same name there will be a conflict which Drew_Benton's Pk2-Editor cannot deal with<br>
+<br>
+<br>
+All Skills:<br>
+<div style="margin:20px; margin-top:5px" bis_skin_checked="1">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Code:</div>
+	<pre class="alt2 prettyprint" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 498px;
+		text-align: left;
+		overflow: auto"><span class="typ">Bicheon</span><span class="pun">:</span><span class="pln">
+</span><span class="typ">Smashing</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SWORD_SMASH_X
+</span><span class="typ">Chain</span><span class="pln"> </span><span class="typ">Sword</span><span class="pln"> </span><span class="typ">Attack</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SWORD_CHAIN_X
+</span><span class="typ">Shield</span><span class="pln"> </span><span class="typ">Technique</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SWORD_SHIELD_X
+</span><span class="typ">Blade</span><span class="pln"> </span><span class="typ">Force</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SWORD_GEOMGI_X
+</span><span class="typ">Hidden</span><span class="pln"> </span><span class="typ">Blade</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SWORD_KNOCKDOWN_X
+</span><span class="typ">Killing</span><span class="pln"> </span><span class="typ">Heaven</span><span class="pln"> </span><span class="typ">Blade</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SWORD_DOWNATTACK_X
+</span><span class="typ">Sword</span><span class="pln"> </span><span class="typ">Dance</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SWORD_SPECIAL_X
+
+</span><span class="typ">Heuksal</span><span class="pun">:</span><span class="pln">
+</span><span class="typ">Annihilating</span><span class="pln"> </span><span class="typ">Blade</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SPEAR_PIERCE_X
+</span><span class="typ">Fanning</span><span class="pln"> </span><span class="typ">Spear</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SPEAR_SPIN_X
+</span><span class="typ">Heuksal</span><span class="pln"> </span><span class="typ">Spear</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SPEAR_FRONTAREA_X
+</span><span class="typ">Soul</span><span class="pln"> </span><span class="typ">Departs</span><span class="pln"> </span><span class="typ">Spear</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SPEAR_STUN_X
+</span><span class="typ">Ghost</span><span class="pln"> </span><span class="typ">Spear</span><span class="pln"> </span><span class="typ">Attack</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SPEAR_ROUNDAREA_X
+</span><span class="typ">Chain</span><span class="pln"> </span><span class="typ">Spear</span><span class="pln"> </span><span class="typ">Attack</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SPEAR_CHAIN_X
+</span><span class="typ">Flying</span><span class="pln"> </span><span class="typ">Dragon</span><span class="pln"> </span><span class="typ">Spear</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_SPEAR_SHOOT_X
+
+</span><span class="typ">Pacheon</span><span class="pun">:</span><span class="pln">
+</span><span class="typ">Anti</span><span class="pln"> </span><span class="typ">Devil</span><span class="pln"> </span><span class="typ">Bow</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_BOW_CRITICAL_X
+</span><span class="typ">Arrow</span><span class="pln"> </span><span class="typ">Combo</span><span class="pln"> </span><span class="typ">Attack</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_BOW_CHAIN_X
+</span><span class="typ">Hawk</span><span class="pln"> </span><span class="typ">Training</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_BOW_CALL_X
+</span><span class="typ">Autumn</span><span class="pln"> </span><span class="typ">Wind</span><span class="pln"> </span><span class="typ">Arrow</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_BOW_PIERCE_X
+</span><span class="typ">Break</span><span class="pln"> </span><span class="typ">Heaven</span><span class="pln"> </span><span class="typ">Arrow</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_BOW_NORMAL_X
+</span><span class="typ">Explosion</span><span class="pln"> </span><span class="typ">Arrow</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_BOW_AREA_X
+</span><span class="typ">Strong</span><span class="pln"> </span><span class="typ">Bow</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_BOW_POWER_X
+</span><span class="typ">Mind</span><span class="pln"> </span><span class="typ">Bow</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_BOW_SPECIAL_X
+
+</span><span class="typ">Cold</span><span class="pun">:</span><span class="pln">
+</span><span class="typ">Cold</span><span class="pln"> </span><span class="typ">Force</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_COLD_GIGONGTA_X
+</span><span class="typ">Frost</span><span class="pln"> </span><span class="typ">Guard</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_COLD_GANGGI_X
+</span><span class="typ">Cold</span><span class="pln"> </span><span class="typ">Wave</span><span class="pln"> </span><span class="typ">Attack</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_COLD_GIGONGJANG_X
+</span><span class="typ">Frost</span><span class="pln"> </span><span class="typ">Wall</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_COLD_BINGBYEOK_X
+</span><span class="typ">Frost</span><span class="pln"> </span><span class="typ">Nova</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> KILL_CH_COLD_BINGPAN_X
+</span><span class="typ">Snow</span><span class="pln"> </span><span class="typ">Storm</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_COLD_GIGONGSUL_X
+</span><span class="typ">Snow</span><span class="pln"> </span><span class="typ">Shield</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_COLD_SHIELD_X
+
+</span><span class="typ">Lightning</span><span class="pun">:</span><span class="pln">
+</span><span class="typ">Thunder</span><span class="pln"> </span><span class="typ">Force</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_LIGHTNING_GIGONGTA_X
+</span><span class="typ">Piercing</span><span class="pln"> </span><span class="typ">Force</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_LIGHTNING_GWANTONG_X
+</span><span class="typ">Wind</span><span class="pln"> </span><span class="typ">Walk</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_LIGHTNING_GYEONGGONG_X
+</span><span class="typ">Lion</span><span class="pln"> </span><span class="typ">Shout</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_LIGHTNING_CHUNDUNG_X
+</span><span class="typ">Concentration</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_LIGHTNING_JIPJUNG_X
+</span><span class="typ">Thunderbolt</span><span class="pln"> </span><span class="typ">Force</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_LIGHTNING_STORM_X
+
+</span><span class="typ">Fire</span><span class="pun">:</span><span class="pln">
+</span><span class="typ">Fire</span><span class="pln"> </span><span class="typ">Force</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_FIRE_GIGONGTA_X
+</span><span class="typ">Fire</span><span class="pln"> </span><span class="typ">Shield</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_FIRE_SHIELD_X
+</span><span class="typ">Flame</span><span class="pln"> </span><span class="typ">Body</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_FIRE_GONGUP_X
+</span><span class="typ">Fire</span><span class="pln"> </span><span class="typ">Protection</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_FIRE_GANGGI_X
+</span><span class="typ">Fire</span><span class="pln"> </span><span class="typ">Wall</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_FIRE_HWABYEOK_X
+</span><span class="typ">Flame</span><span class="pln"> </span><span class="typ">Wave</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_FIRE_GIGONGSUL_X
+</span><span class="typ">Fire</span><span class="pln"> </span><span class="typ">Combustion</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_FIRE_DESCRY_X
+
+</span><span class="typ">Force</span><span class="pun">:</span><span class="pln">
+</span><span class="typ">Self</span><span class="pln"> </span><span class="typ">Heal</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_WATER_SELFHEAL_X
+</span><span class="typ">Force</span><span class="pln"> </span><span class="typ">Cure</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_WATER_CURE_X
+</span><span class="typ">Heal</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_WATER_CUREAREA_X
+</span><span class="typ">Rebirth</span><span class="pln"> </span><span class="typ">Art</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_WATER_HEAL_X
+</span><span class="typ">Natural</span><span class="pln"> </span><span class="typ">Therapy</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_WATER_RESURRECTION_X
+</span><span class="typ">Vital</span><span class="pln"> </span><span class="typ">Spot</span><span class="pln"> </span><span class="typ">Attack</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_WATER_HARMONY_X
+</span><span class="typ">Cure</span><span class="pln"> </span><span class="typ">Therapy</span><span class="pln"> </span><span class="typ">Series</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> SKILL_CH_WATER_CANCEL_X
+
+</span><span class="str">"X"</span><span class="pln"> stands </span><span class="kwd">for</span><span class="pln"> the </span><span class="typ">Book</span><span class="pln">
+</span><span class="typ">Example</span><span class="pun">:</span><span class="pln">
+SKILL_CH_BOW_CALL_X
+
+SKILL_CH_BOW_CALL_A </span><span class="pun">=</span><span class="pln"> </span><span class="typ">White</span><span class="pln"> </span><span class="typ">Hawk</span><span class="pln"> </span><span class="typ">Summon</span><span class="pln">
+SKILL_CH_BOW_CALL_B </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Black</span><span class="pln"> </span><span class="typ">Hawk</span><span class="pln"> </span><span class="typ">Summon</span></pre>
+</div><br>
+<font size="5"><font color="red"><b>?. Importing the Files to the .pk2</b></font></font><br>
+<br>
+open Drew's Pk2 Editor:<br>
+<br>
+open Media.pk2:<br>
+File -&gt; open -&gt; Media.pk2<br>
+<br>
+<br>
+Automatic Single File Update:<br>
+open your file which you want to import (my file is itemdata.txt):<br>
+Automatic Single File Update -&gt; Select File -&gt; itemdata.txt -&gt; Import<br>
+<br>
+<br>
+Manual Single File Update:<br>
+this function is used if there are two or more files with the same name but in different folders:<br>
+Example:<br>
+skilleffect.txt<br>
+\Media\server_dep\silkroad\textdata\skilleffect.tx  t<br>
+\Media\resinfo\skilleffect.txt<font color="Red"> &lt;--- </font>this is what i will use <img width="16" height="16" src="images/smilies/smile.gif" border="0" alt="" title="Smile" class="inlineimg"><br>
+<br>
+Manual Single File Update -&gt; Select File -&gt; skilleffect.txt (Folder: \Media\resinfo)<br>
+Entry Name: skilleffect.txt<br>
+Entry Folder: \Media\resinfo<br>
+-&gt; Import!<br>
+<br>
+<br>
+<br>
+<font color="DeepSkyBlue"><font size="5"><b>I also support the codes for items in the pk2 files<br>
+Just ask for the item i will give you the codes!</b></font></font><br>
+<br>
+<br>
+<b><font color="Cyan">Tutorial is written by [EXiT].cr[Y]staL^</font></b><br>
+<br>
+<font size="3"><b><font color="DarkOrange">Tools:</font></b></font><br>
+<br>
+[<a rel="nofollow noopener noreferrer" href="//www.elitepvpers.com/link/?http://www.sendspace.com/file/dzy1te" target="_blank" bis_skin_checked="1">PK2-Extractor // PK2-Editor</a><br>
+<br>
+<b>PK2-Extractor</b> <b>- <font color="Lime">Basic Tool</font></b><br>
+<blockquote class="bbcode-quote" style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+
+				This is a PK2 file extractor. It allows you to open up the PK2s and extract the files. Unlike the existing PK2 Extractor, this one has a few extra features. There are two modes: Explore mode and Search mode. <br>
+<br>
+Explore mode allows you to navigate through the PK2 structure and selectively extract folders or files. A simple tree view control is used so when you click on entries you can see details on the file name, file path, and file size.<br>
+<br>
+Search mode allows you to perform searches on the PK2 entries to find the files you wish to extract. You can search by a string found in the path or title of an entry, the file size, and entry type (file or folder). In addition to being able to just search, you can Filter results. This means you can search for all ".ddj" files of a size less than 1kb that have the phrase "skill" in them for example.
+
+		</td>
+	</tr>
+	</tbody></table>
+</blockquote><b>PK2-Editor</b> <b>- <font color="Lime">Basic Tool</font></b><br>
+<blockquote class="bbcode-quote" style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px" bis_skin_checked="1">Quote:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+
+				This is a fully functional PK2 Editor. With this tool, you can import in modified PK2 files as well as import your own new files into the PK2 archive. The files you import can be larger or smaller than the original, the functions used will take care of everything. However, it is important to remember that the PK2s expect files in certain formats, so trying to import a dds in place of a ddj will result in a Silkroad crash.<br>
+<br>
+The main functionally implemented for the PK2 editor is: automatic single file import, automatic multiple file import, and single file manual import. The automatic imports work by searching the PK2 for the file you are importing, if only one etrny exists, it can update that entry. If more than one entry exists, it will fail and you will have to use the manual import.
+
+		</td>
+	</tr>
+	</tbody></table>
+</blockquote><br>
+<b>-Thx goes to <font color="Lime">Drew_Benton</font></b><br>
+<br>
+<font color="SeaGreen"><b>Edited with Drew's archive.</b></font>
+		</div>
