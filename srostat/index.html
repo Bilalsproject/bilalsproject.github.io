@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRO Stat Calculator</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at center, #20242b 0%, #111318 55%, #090a0d 100%);
+
+            color: #e6e6e6;
+            font-family: Arial, Helvetica, sans-serif;
+
+            overflow: hidden;
+        }
+
+        .calculator {
+            width: 363px;
+            height: 255px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.65),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+
+            overflow: hidden;
+        }
+
+        .calculator iframe {
+            display: block;
+
+            width: 363px;
+            height: 255px;
+
+            border: 0;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <iframe
+            src="assets/SroStat.html"
+            scrolling="no"
+            frameborder="0">
+        </iframe>
+    </div>
+
+</body>
+</html>
