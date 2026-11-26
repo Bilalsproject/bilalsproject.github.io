@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VSRO / ISRO DevKit Kurulum ve Derleme</title>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--line:#262b36;--tx:#e6e8ec;--mut:#9aa3b2;--ac:#e0a43a;--lk:#6fb3ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 system-ui,Segoe UI,Roboto,sans-serif}
+header{padding:48px 20px 28px;text-align:center;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#1b1f28,transparent)}
+header h1{margin:0 0 6px;font-size:clamp(24px,4vw,36px)}header p{margin:0;color:var(--mut)}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px;background:rgba(15,17,21,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav a{color:var(--tx);text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid var(--line);font-size:14px}nav a:hover{border-color:var(--ac);color:var(--ac)}
+main{max-width:900px;margin:0 auto;padding:24px 16px 60px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:22px 0;scroll-margin-top:64px}
+h2{margin:0 0 12px;display:flex;align-items:center;gap:12px;font-size:22px}
+h2 span{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--ac);color:#111;font-size:16px}
+a{color:var(--lk)}code,kbd{background:#0b0d11;border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-family:Consolas,monospace;font-size:.92em}
+kbd{border-bottom-width:2px}pre{background:#0b0d11;border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto}pre code{border:0;padding:0}
+.note{border-left:3px solid var(--ac);padding:8px 12px;background:#1d1a12;border-radius:0 6px 6px 0}
+figure{margin:14px 0}figure img{max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line);cursor:zoom-in;display:block}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;place-items:center;z-index:9;cursor:zoom-out}#lb img{max-width:95vw;max-height:95vh}
+footer{text-align:center;color:var(--mut);font-size:14px;padding:20px}
+</style></head><body>
+<header><h1>VSRO / ISRO DevKit Kurulum ve Derleme</h1><p>Orijinal anlatım: KraT · srocave.com · 13 Ocak 2025</p></header>
+<nav><a href="#cmake">CMake</a><a href="#ninja">Ninja</a><a href="#vs2005">VS 2005</a><a href="#vs2022">VS 2022</a><a href="#derleme">Derleme</a><a href="#inject">Inject</a><a href="#isro">ISRO</a></nav>
+<main>
+<section id="cmake"><h2><span>1</span> CMake kurulumu</h2>
+<p><a href="https://cmake.org/download/" target="_blank" rel="noopener">CMake indirme sayfasından</a> CMake'i indirin. Kurulum sırasında aşağıdaki seçeneği işaretleyin:</p>
+<figure><a href="images/1736787521846.png" class="zoom"><img src="images/1736787521846.png" data-remote="https://srocave.com/attachments/1736787521846-png.13605/" width="499" height="388" loading="lazy" alt="1736787521846" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure></section>
+
+<section id="ninja"><h2><span>2</span> Ninja kurulumu</h2>
+<p><a href="https://github.com/ninja-build/ninja/releases" target="_blank" rel="noopener">ninja-build/ninja Releases</a> sayfasından <code>ninja-win.zip</code> dosyasını indirin.</p>
+<p><kbd>Win</kbd> + <kbd>R</kbd> ile Çalıştır penceresini açın ve şunu yazın: <code>%localappdata%</code></p>
+<figure><a href="images/1736787609642.png" class="zoom"><img src="images/1736787609642.png" data-remote="https://srocave.com/attachments/1736787609642-png.13606/" width="392" height="201" loading="lazy" alt="1736787609642" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p>Açılan pencerede <b>Ninja</b> adında bir klasör oluşturun ve <code>ninja.exe</code>'yi içine atın.</p>
+<figure><a href="images/1736787681666.png" class="zoom"><img src="images/1736787681666.png" data-remote="https://srocave.com/attachments/1736787681666-png.13607/" width="705" height="546" loading="lazy" alt="1736787681666" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p>Bu klasörün dosya yolunu kopyalayın.</p>
+<figure><a href="images/1736787759253.png" class="zoom"><img src="images/1736787759253.png" data-remote="https://srocave.com/attachments/1736787759253-png.13608/" width="712" height="548" loading="lazy" alt="1736787759253" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p><kbd>Win</kbd> tuşuna basıp <b>ortam değişkenleri</b> diye aratın ve çıkan sonuca tıklayın.</p>
+<figure><a href="images/1736787855852.png" class="zoom"><img src="images/1736787855852.png" data-remote="https://srocave.com/attachments/1736787855852-png.13609/" width="401" height="424" loading="lazy" alt="1736787855852" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p>Açılan pencerede <b>Ortam Değişkenleri</b> düğmesine tıklayın.</p>
+<figure><a href="images/1736787961638.png" class="zoom"><img src="images/1736787961638.png" data-remote="https://srocave.com/attachments/1736787961638-png.13610/" width="404" height="461" loading="lazy" alt="1736787961638" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p><b>Kullanıcı değişkenleri</b> bölümünde <b>Path</b>'i seçip <b>Düzenle</b>'ye tıklayın.</p>
+<figure><a href="images/1736788016166.png" class="zoom"><img src="images/1736788016166.png" data-remote="https://srocave.com/attachments/1736788016166-png.13611/" width="618" height="585" loading="lazy" alt="1736788016166" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p><b>Yeni</b> deyip kopyaladığınız klasör yolunu yapıştırın, <b>Tamam</b> ile kapatın.</p>
+<figure><a href="images/1736788090197.png" class="zoom"><img src="images/1736788090197.png" data-remote="https://srocave.com/attachments/1736788090197-png.13612/" width="527" height="503" loading="lazy" alt="1736788090197" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure></section>
+
+<section id="vs2005"><h2><span>3</span> Visual Studio 2005 kurulumu</h2>
+<p><a href="https://archive.org/details/Microsoft_Visual_Studio_2005_180-Days_Trial" target="_blank" rel="noopener">Internet Archive – Visual Studio 2005 180-Days Trial</a> adresinden indirip kurun. Ekstra bir ayar yok: Next, Next 🙂</p></section>
+
+<section id="vs2022"><h2><span>4</span> Visual Studio 2022 kurulumu</h2>
+<p class="note">Ön gereksinimler bitti, şimdi Visual Studio 2022'yi kuralım.</p>
+<p><a href="https://visualstudio.microsoft.com/tr/vs/" target="_blank" rel="noopener">Visual Studio 2022</a> sayfasından indirin ve yükleyici ekranında aşağıdakileri seçin:</p>
+<figure><a href="images/1736788299064.png" class="zoom"><img src="images/1736788299064.png" data-remote="https://srocave.com/attachments/1736788299064-png.13613/" width="1280" height="720" loading="lazy" alt="1736788299064" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure></section>
+
+<section id="derleme"><h2><span>5</span> DevKit'i klonlama ve derleme</h2>
+<p>VS 2022 açılınca <b>Clone repository</b>'yi seçin. <a href="https://gitlab.com/florian0/sro_devkit" target="_blank" rel="noopener">florian0 / SRO_DevKit · GitLab</a> adresini kopyalayıp aşağıdaki alana yazın:</p>
+<pre><code>https://gitlab.com/florian0/sro_devkit</code></pre>
+<figure><a href="images/1736788361158.png" class="zoom"><img src="images/1736788361158.png" data-remote="https://srocave.com/attachments/1736788361158-png.13614/" width="1014" height="675" loading="lazy" alt="1736788361158" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure><figure><a href="images/1736788373479.png" class="zoom"><img src="images/1736788373479.png" data-remote="https://srocave.com/attachments/1736788373479-png.13615/" width="1014" height="675" loading="lazy" alt="1736788373479" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure><figure><a href="images/1736788385841.png" class="zoom"><img src="images/1736788385841.png" data-remote="https://srocave.com/attachments/1736788385841-png.13616/" width="490" height="180" loading="lazy" alt="1736788385841" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p class="note">Klonlama bittikten sonra <b>Klasör Aç</b> deyin ve devkit klasörünü seçin.</p>
+<figure><a href="images/1736788424543.png" class="zoom"><img src="images/1736788424543.png" data-remote="https://srocave.com/attachments/1736788424543-png.13617/" width="398" height="440" loading="lazy" alt="1736788424543" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p>Aşağıdaki gibi seçili olduğundan emin olun:</p>
+<figure><a href="images/1736788457218.png" class="zoom"><img src="images/1736788457218.png" data-remote="https://srocave.com/attachments/1736788457218-png.13618/" width="630" height="90" loading="lazy" alt="1736788457218" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p>Başlangıç projesi olarak <b>DevKit_DLL</b>'i seçin:</p>
+<figure><a href="images/1736788485868.png" class="zoom"><img src="images/1736788485868.png" data-remote="https://srocave.com/attachments/1736788485868-png.13619/" width="801" height="197" loading="lazy" alt="1736788485868" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p>Build edin:</p>
+<figure><a href="images/1736788502272.png" class="zoom"><img src="images/1736788502272.png" data-remote="https://srocave.com/attachments/1736788502272-png.13620/" width="713" height="181" loading="lazy" alt="1736788502272" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p class="note">Buraya kadar hatasız geldiyseniz çıktılar şu klasörde olacaktır: <code>.\sro_devkit4\BinOut\RelWithDebInfo</code></p>
+<figure><a href="images/1736788557279.png" class="zoom"><img src="images/1736788557279.png" data-remote="https://srocave.com/attachments/1736788557279-png.13621/" width="689" height="234" loading="lazy" alt="1736788557279" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure></section>
+
+<section id="inject"><h2><span>6</span> DLL'i client'a inject etme</h2>
+<p><a href="https://www.softpedia.com/get/Programming/File-Editors/StudPE.shtml" target="_blank" rel="noopener">Softpedia – Stud_PE</a> adresinden Stud_PE'yi indirin.</p>
+<p>Stud_PE'yi açın. <b>File → Open PE</b> ile <code>sro_client.exe</code>'yi seçin ve <b>Functions</b> sekmesine tıklayın.</p>
+<figure><a href="images/1736788714271.png" class="zoom"><img src="images/1736788714271.png" data-remote="https://srocave.com/attachments/1736788714271-png.13622/" width="471" height="343" loading="lazy" alt="1736788714271" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p>Functions'taki DLL listesinde sağ tık → <b>Add New Import</b>.</p>
+<figure><a href="images/1736788763004.png" class="zoom"><img src="images/1736788763004.png" data-remote="https://srocave.com/attachments/1736788763004-png.13623/" width="479" height="342" loading="lazy" alt="1736788763004" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p><b>Dll Select</b> deyip devkit DLL'ini seçin:</p>
+<figure><a href="images/1736788806117.png" class="zoom"><img src="images/1736788806117.png" data-remote="https://srocave.com/attachments/1736788806117-png.13624/" width="465" height="336" loading="lazy" alt="1736788806117" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p><b>Select Function</b> deyip çıkan listeden <code>DllMain</code>'i seçin ve <b>Add to list</b> deyin.</p>
+<figure><a href="images/1736788885605.png" class="zoom"><img src="images/1736788885605.png" data-remote="https://srocave.com/attachments/1736788885605-png.13625/" width="466" height="343" loading="lazy" alt="1736788885605" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p><b>Add</b> ve ardından <b>OK</b> deyip kapatın.</p>
+<figure><a href="images/1736788913039.png" class="zoom"><img src="images/1736788913039.png" data-remote="https://srocave.com/attachments/1736788913039-png.13626/" width="265" height="282" loading="lazy" alt="1736788913039" onerror="if(this.dataset.remote&&this.src!==this.dataset.remote){this.src=this.dataset.remote}"></a></figure>
+<p class="note">Oluşturduğunuz devkit DLL'ini client klasörüne atın ve oyuna girin. Her şey yolundaysa hatasız girebileceksiniz.</p></section>
+
+<section id="isro"><h2><span>7</span> ISRO için</h2>
+<p>Buraya kadarki anlatım VSRO içindir. ISRO için Bimbum'un devkit reposundan yalnızca <code>source</code> klasörünü alıp florian'ın klasörüne atın, derleyin ve adımları tekrarlayın. Yazarın uyarısı: biraz bugludur.</p>
+<p>🔗 <a href="https://github.com/Bimbum1337/ISRO-R-DEVKIT" target="_blank" rel="noopener">GitHub – Bimbum1337/ISRO-R-DEVKIT</a></p></section>
+</main>
+<footer>Kaynak: <a href="https://srocave.com/konular/vsro-isro-devkit-kurulum-ve-derleme.1645/" target="_blank" rel="noopener">srocave.com</a></footer>
+<div id="lb"><img alt=""></div>
+<script>
+const lb=document.getElementById('lb'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(x=>x.addEventListener('click',e=>{e.preventDefault();li.src=x.querySelector('img').currentSrc;lb.style.display='grid'}));
+lb.onclick=()=>lb.style.display='none';document.onkeydown=e=>{if(e.key==='Escape')lb.style.display='none'};
+</script></body></html>
